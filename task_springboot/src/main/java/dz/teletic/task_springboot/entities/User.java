@@ -42,6 +42,8 @@ public class User implements UserDetails {
     
     public UserDto getUserDto() {
         UserDto userDto = new UserDto();
+
+        userDto.setId(id);
         userDto.setEmail(email);
         userDto.setName(name);
         userDto.setPassword(password);

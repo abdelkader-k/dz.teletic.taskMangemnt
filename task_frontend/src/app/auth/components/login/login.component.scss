@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;  /* Changed from % to vh for better viewport handling */
+    // min-height: 400px;  /* Added minimum height */
+}
+
+mat-card {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    // margin: 20px;  /* Added margin for better spacing */
+// }
+
+    @media screen and (max-width: 500px) {
+        // mat-card {
+            max-width: 90%;
+        //     padding: 15px;  /* Adjusted padding for mobile */
+        // }
+    }
+}
+
+mat-card-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    // color: #3f51b5;  /* Added color matching primary theme */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: 15px;  /* Added gap instead of individual margins */
+    // width: 100%;  /* Ensures form takes full card width */
+}
+
+/* Form field styling */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+// button[mat-raised-button] {
+button{
+    width: 100%;
+    // margin-top: 10px;
+    // padding: 8px 0; /* Added padding for better touch targets */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 500px) {
+    mat-card-title {
+        font-size: 20px;
+        // margin-bottom: 15px; /* Added for better spacing */
+    }
+
+    mat-form-field {
+        margin-bottom: 10px;
+    }
+
+    // button[mat-raised-button] {
+    //     padding: 6px 0; /* Adjusted padding for mobile */
+    // }
+}
+
+/* Error snackbar styling */
+.error-snackbar {
+    background-color: #f44336 !important;
+    // color: white;
+    // text-align: center; /* Added for better text alignment */
+}
+
