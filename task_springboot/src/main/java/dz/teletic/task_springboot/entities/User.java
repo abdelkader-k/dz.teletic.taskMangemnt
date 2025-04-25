@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import dz.teletic.task_springboot.dto.UserDto;
 import dz.teletic.task_springboot.enums.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,4 +40,13 @@ public class User implements UserDetails {
         return email;
     }
     
+    public UserDto getUserDto() {
+        UserDto userDto = new UserDto();
+        userDto.setEmail(email);
+        userDto.setName(name);
+        userDto.setPassword(password);
+        userDto.setUserRole(userRole);
+        return userDto;
+    }
+
 }
