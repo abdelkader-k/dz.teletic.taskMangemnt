@@ -19,6 +19,12 @@ export class AdminService {
       );
   }
   
+    getAllTasks(): Observable<any> {
+        return this.http.get(BASE_URL + "api/admin/tasks", {
+            headers: this.createAuthorizationHeader()
+        });
+    }
+
     postTask(taskDTO: any): Observable<any> {
         return this.http.post(BASE_URL + "api/admin/task", taskDTO, {
             headers: this.createAuthorizationHeader()
