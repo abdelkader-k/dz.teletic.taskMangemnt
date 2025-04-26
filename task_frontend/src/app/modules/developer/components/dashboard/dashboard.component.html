@@ -24,18 +24,22 @@
             </div>
 
             <mat-divider></mat-divider>
-            <!-- <div class="actions">
-                <button mat-icon-button color="accent" class="view-button" [routerLink]="'/admin/task-details/' + task.id">
+            <div class="actions">
+                <!-- <button mat-icon-button color="accent" class="view-button" [routerLink]="'/admin/task-details/' + task.id">
                     <mat-icon>visibility</mat-icon>
-                </button>
+                </button> -->
                 <button mat-icon-button color="primary" class="update-button" 
-                        [routerLink]="'/admin/task/' + task.id + '/edit'">
+                    [matMenuTriggerFor]="statusMenu">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn" class="delete-button" (click)="deleteTask(task.id)">
+                <mat-menu #statusMenu="matMenu">
+                    <button mat-menu-item (click)="updateStatus(task.id, 'INPROGRESS')">INPROGRESS</button>
+                    <button mat-menu-item (click)="updateStatus(task.id, 'COMPLETED')">COMPLETED</button>
+                </mat-menu>
+                <!-- <button mat-icon-button color="warn" class="delete-button" (click)="deleteTask(task.id)">
                     <mat-icon>delete</mat-icon>
-                </button>
-            </div> -->
+                </button> -->
+            </div>
         </div>
     </mat-card>
 </div>

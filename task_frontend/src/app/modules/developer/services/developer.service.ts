@@ -24,4 +24,13 @@ export class DeveloperService {
       );
   }
   
+  updateStatus(id: number, status: string): Observable<any> {
+    return this.http.get(
+        `${BASE_URL}api/developer/task/${id}/${status}`,
+        {
+            headers: this.createAuthorizationHeader()
+        }
+    );
+}
+
 }
