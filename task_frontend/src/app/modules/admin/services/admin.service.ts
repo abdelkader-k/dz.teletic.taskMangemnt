@@ -19,6 +19,12 @@ export class AdminService {
       );
   }
   
+    postTask(taskDTO: any): Observable<any> {
+        return this.http.post(BASE_URL + "api/admin/task", taskDTO, {
+            headers: this.createAuthorizationHeader()
+        });
+    }
+
 //   private createAuthorizationHeader(): HttpHeaders {
 //       const token = StorageService.getToken();
 //       if (!token) {
