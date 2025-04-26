@@ -7,12 +7,14 @@ import { PostTaskComponent } from './components/post-task/post-task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DemoAngularMaterialModule } from 'src/app/DemoAngularMaterialModule';
+import { UpdateTaskComponent } from './components/update-task/update-task.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    PostTaskComponent
+    PostTaskComponent,
+    UpdateTaskComponent
   ],
   imports: [
     CommonModule,

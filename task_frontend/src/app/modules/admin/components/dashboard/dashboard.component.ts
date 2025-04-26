@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,9 @@ export class DashboardComponent {
 
   listOfTasks: any[] = [];
 
-  constructor(private service: AdminService) {
+  constructor(private service: AdminService,
+    private snackBar: MatSnackBar,
+  ) {
       this.getTasks();
   }
 
@@ -18,6 +21,18 @@ export class DashboardComponent {
       this.service.getAllTasks().subscribe((res) => {
           this.listOfTasks = res;
       });
+  }
+
+  deleteTask(id: number) {
+    this.service.deleteTask(id).subscribe({
+        next: () => {
+            this.snackBar.open("Task deleted successfully", "Close", { duration: 5000 });
+            this.getTasks();
+        },
+        error: (err) => {
+            this.snackBar.open("Failed to delete task", "Error", { duration: 5000 });
+        }
+    });
   }
 
 }
